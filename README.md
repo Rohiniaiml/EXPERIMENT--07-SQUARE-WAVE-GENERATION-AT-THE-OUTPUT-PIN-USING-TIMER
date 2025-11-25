@@ -344,34 +344,57 @@ void assert_failed(uint8_t *file, uint32_t line)
 ## DUTY CYCLE AND FREQUENCY CALCULATION 
 FOR PULSE AT 500
 
-TON = 30ms
-
-TOFF= 8 ms
-
-TOTAL TIME = 30ms+8ms = 38ms
-
-FREQUENCY = 1/38ms = 0.026mhz = 26hz
+TON = 3 * 0.1 * 10^-3
+    = 0.0003s = 0.3ms 
+TOFF = 3 * 0.1 * 10^-3
+    = 0.0003s  0.3ms
+TOTAL TIME = TON+TOFF = 0.0003+0.0003
+           = 0.0006s = 0.6ms
+FREQUENCY = 1/(TOTAL TIME) = 1/0.0006 
+                           = 1666.67 Hz
+DUTY CYCLE = TON/(TON+TOFF)
+           = 0.0003/0.0006
+           = 0.5
+        IN % = 0.5*100
+             = 50 %
 
 FOR PULSE AT 700
 
-TON = 44ms
+TON = 4.2 * 0.1 * 10^-3
+    = 0.00042s = 0.42ms
+TOFF= 1.9 * 0.1 * 10^-3
+    = 0.00019s = 0.19ms
+TOTAL TIME = TON + TOFF
+           = 0.00042+0.00019
+           = 0.00061s = 0.61ms
+FREQUENCY = 1/(TOTAL TIME)
+          = 1639.3 Hz
+DUTY CYCLE = TON /(TON+TOFF)
+           = 0.00042/0.00061
+           = 0.69
+      IN % =0.69*100 
+           = 69 %
 
-TOFF= 4.5ms
 
-TOTAL TIME = 44ms+4.5ms = 48.5ms
 
-FREQUENCY = 1/48.5ms = 0.20mhz = 20hz
+
 
 FOR PULSE AT 900
 
-TON = 56ms
-
-TOFF= 2ms
-
-TOTAL TIME = 56ms+2ms = 58ms
-
-FREQUENCY = 1/58ms = 0.017mhz = 17hz
-
+TON = 5.4 * 0.1 * 10^-3
+    = 0.00054s
+TOFF= 0.6 x 0.1 x 10^-3
+    = 0.00006s
+TOTAL TIME = TON + TOFF
+           = 0.00054 + 0.00006
+           = 0.0006s
+FREQUENCY = 1/(TOTAL TIME)
+          = 1666.67 Hz
+DUTY CYCLE = TON /(TON+TOFF)
+           = 0.00054/0.0006
+           = 0.9
+      IN % =0.9*100 
+           = 90 %
 
 ## Result :
 A PWM Signal is generated using the following frequency and various duty cycles are simulated 
